@@ -9,6 +9,7 @@ import ServiceEmergency from "./pages/ServiceEmergency";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
+import BlogDetail from "./pages/BlogDetail";
 import LocationsIndex from "./pages/LocationsIndex";
 import LocationPage from "./pages/LocationPage";
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/locations" element={<LocationsIndex />} />
           <Route path="/locations/:id" element={<LocationPage />} />
         </Routes>

@@ -4,7 +4,14 @@ import { locations } from "../data/locations";
 export default function LocationsIndex() {
   return (
     <div className="service-page">
-      <section className="page-hero">
+      <section
+        className="page-hero"
+        style={{
+          backgroundImage: `linear-gradient(135deg,rgba(10,26,60,.75) 50%,rgba(10,26,60,.55)), url(/images/hero-location-1.webp)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <h1>New Garage Door Installation — Atlanta Neighborhoods</h1>
           <p className="page-hero-sub">
@@ -32,7 +39,14 @@ export default function LocationsIndex() {
         </div>
       </section>
 
-      <section className="cta-banner">
+      <section
+        className="cta-banner"
+        style={{
+          backgroundImage: `linear-gradient(rgba(10,20,40,.85), rgba(10,20,40,.85)), url(/images/cta-location.webp)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <h2>Not Sure Which Location?</h2>
           <p>No matter where you are in Metro Atlanta, we serve your area. Call us at 470-666-4097 to schedule your free consultation.</p>

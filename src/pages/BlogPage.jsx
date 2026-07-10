@@ -1,31 +1,5 @@
 import { Link } from "react-router-dom";
-
-const blogPosts = [
-  {
-    title: "5 Signs Your Garage Door Springs Need Replacing (And Why You Should Not Wait)",
-    teaser: "Learn to recognize the warning signs of worn-out springs before they snap — and understand why professional replacement is the only safe option."
-  },
-  {
-    title: "Garage Door Maintenance Checklist for Atlanta Homeowners",
-    teaser: "A seasonal guide to keeping your garage door in peak condition through Atlanta's hot summers, stormy springs, and occasional winter freezes."
-  },
-  {
-    title: "New Garage Door or Repair: How to Decide What Is Right for Your Home",
-    teaser: "Not sure whether to fix your old door or invest in a new one? We break down the cost, value, and key factors every homeowner should consider."
-  },
-  {
-    title: "How to Choose the Right Garage Door Opener for Your Atlanta Home",
-    teaser: "From belt-drive to chain-drive, smart features to battery backup — everything you need to know before buying a new opener."
-  },
-  {
-    title: "Why Garage Door Safety Sensors Matter And How to Keep Them Working",
-    teaser: "Understanding the critical safety reverse system, common sensor issues, and simple maintenance tips to keep your family safe."
-  },
-  {
-    title: "Garage Door Curb Appeal: How a New Door Transforms Your Atlanta Home",
-    teaser: "See how upgrading your garage door can boost your home's value, improve energy efficiency, and completely change the look of your property."
-  }
-];
+import { blogPosts } from "../data/blogPosts";
 
 export default function BlogPage() {
   return (
@@ -53,17 +27,16 @@ export default function BlogPage() {
             <h2>Garage Door Tips & Advice for Atlanta Homeowners</h2>
           </div>
           <div className="blog-grid">
-            {blogPosts.map((post, i) => (
-              <div key={i} className="blog-card">
-                <div className="blog-image-placeholder">
-                  <span>📝</span>
-                </div>
+            {blogPosts.map((post) => (
+              <Link to={`/blog/${post.slug}`} key={post.slug} className="blog-card">
+                <img src={post.image} alt={post.alt} className="blog-card-image" loading="lazy" />
                 <div className="blog-card-content">
+                  <span className="blog-card-category">{post.category}</span>
                   <h3>{post.title}</h3>
                   <p>{post.teaser}</p>
                   <span className="blog-read-more">Read More →</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
