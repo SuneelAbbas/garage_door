@@ -1029,9 +1029,7 @@ ul{list-style:none;}
 }
 
 .hero-form-card {
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 18px;
   padding: 28px 32px;
