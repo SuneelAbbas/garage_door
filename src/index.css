@@ -1249,12 +1249,12 @@ ul{list-style:none;}
    GALLERY — Before / After
    ========================================== */
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* ==========================================
+   GALLERY — Premium Single‑Card Before/After
+   ========================================== */
+@keyframes glFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .gallery-sub {
@@ -1265,23 +1265,40 @@ ul{list-style:none;}
   line-height: 1.7;
 }
 
+.gallery-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  animation: glFadeUp .6s ease-out both;
+}
+
 .gallery-card {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
-  border: 1px solid var(--border);
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
+  transition: box-shadow .4s ease;
 }
 .gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,.1);
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
 }
 
 .gallery-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
+  position: relative;
+}
+
+/* Vertical divider between before & after */
+.gallery-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #fff;
+  z-index: 3;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(0,0,0,.08);
 }
 
 .gallery-figure {
@@ -1289,46 +1306,69 @@ ul{list-style:none;}
   margin: 0;
   overflow: hidden;
 }
-.gallery-figure--before {
-  border-right: 2px solid #fff;
+.gallery-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,.25));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .gallery-label {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 14px;
   z-index: 2;
-  background: rgba(10,26,60,.75);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  transition: transform .3s ease;
+}
+.gallery-card:hover .gallery-label {
+  transform: scale(1.05);
+}
+.gallery-figure--before .gallery-label {
+  left: 14px;
+  background: rgba(10,26,60,.8);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.15);
 }
 .gallery-label--after {
-  background: rgba(245,148,31,.85);
+  right: 14px;
+  left: auto;
+  background: rgba(245,148,31,.9);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
 }
 
 .gallery-img {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
   display: block;
-  transition: transform .4s ease;
+  transition: transform .6s ease;
 }
 .gallery-card:hover .gallery-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .gallery-caption {
-  padding: 16px 18px;
-  font-size: 14px;
+  padding: 22px 28px;
+  font-size: 15px;
   color: var(--gray);
-  line-height: 1.6;
+  line-height: 1.7;
   border-top: 1px solid var(--border);
+  text-align: center;
+}
+.gallery-caption::before {
+  content: "✨";
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 /* ==========================================
@@ -2775,8 +2815,7 @@ a.blog-card{text-decoration:none;color:inherit;display:block;}
   .page-hero h1{font-size:28px;}
 
   /* —— Gallery tablet —— */
-  .gallery-grid { grid-template-columns: 1fr; gap: 24px; }
-  .gallery-img { height: 170px; }
+  .gallery-img { height: 200px; }
 
   /* —— How It Works tablet —— */
   .how-steps { grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -2824,7 +2863,6 @@ a.blog-card{text-decoration:none;color:inherit;display:block;}
   .contact-details-grid{grid-template-columns:1fr;}
 
   /* —— Gallery mobile —— */
-  .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
   .gallery-img { height: 150px; }
   .gallery-caption { padding: 14px; font-size: 13px; }
 
@@ -2832,3 +2870,40 @@ a.blog-card{text-decoration:none;color:inherit;display:block;}
   .how-steps { grid-template-columns: 1fr; gap: 16px; }
   .how-step { padding: 24px 16px 22px; }
 }
+
+/* ==========================================
+   GLOBAL SCROLL-REVEAL ANIMATIONS
+   ========================================== */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity .5s cubic-bezier(.25,.46,.45,.94),
+              transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+[data-reveal="fade-up"]    { transform: translateY(44px); }
+[data-reveal="fade-down"]  { transform: translateY(-44px); }
+[data-reveal="fade-left"]  { transform: translateX(-44px); }
+[data-reveal="fade-right"] { transform: translateX(44px); }
+[data-reveal="scale-in"]   { transform: scale(.88); }
+[data-reveal="fade-in"]    { transform: none; }
+
+/* ── Staggered children ── */
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .5s cubic-bezier(.25,.46,.45,.94),
+              transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+[data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: .03s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: .08s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: .13s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: .18s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: .23s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: .28s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(7) { transition-delay: .33s; opacity: 1; transform: translateY(0); }
+[data-reveal-stagger].revealed > *:nth-child(8) { transition-delay: .38s; opacity: 1; transform: translateY(0); }

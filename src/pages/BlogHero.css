@@ -1,0 +1,150 @@
+/* ==========================================
+   BLOG HERO — Premium Next-Level Hero
+   ========================================== */
+
+/* ── Keyframes ── */
+@keyframes blFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(20px, -25px) scale(1.05); }
+  50%      { transform: translate(-12px, 15px) scale(0.95); }
+  75%      { transform: translate(10px, -10px) scale(1.02); }
+}
+@keyframes blPing {
+  0%   { transform: scale(1); opacity: .6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ── Hero Wrapper ── */
+.bl-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ── Animated Orbs ── */
+.bl-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  animation: blOrbFloat 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.bl-hero-orb--1 {
+  width: 550px; height: 550px;
+  top: -25%; right: -8%;
+  background: radial-gradient(circle, rgba(245,148,31,.2) 0%, transparent 60%);
+  animation-delay: 0s;
+}
+.bl-hero-orb--2 {
+  width: 400px; height: 400px;
+  bottom: -20%; left: -5%;
+  background: radial-gradient(circle, rgba(16,40,90,.35) 0%, transparent 60%);
+  animation-delay: 3s;
+}
+.bl-hero-orb--3 {
+  width: 280px; height: 280px;
+  top: 25%; left: 60%;
+  background: radial-gradient(circle, rgba(245,148,31,.08) 0%, transparent 60%);
+  animation-delay: 6s;
+}
+
+/* ── Grid Overlay ── */
+.bl-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Badge ── */
+.bl-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 100px;
+  padding: 6px 18px 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 20px;
+  animation: blFadeUp .6s ease-out both;
+}
+.bl-hero-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  position: relative;
+}
+.bl-hero-badge-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: blPing 1.5s ease-in-out infinite;
+}
+
+/* ── Hero Content ── */
+.bl-hero-content {
+  position: relative;
+  z-index: 1;
+  animation: blFadeUp .6s ease-out .15s both;
+}
+
+/* ── Stats Bar ── */
+.bl-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  animation: blFadeUp .6s ease-out .3s both;
+}
+.bl-hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bl-hero-stat-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+.bl-hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  font-weight: 500;
+}
+.bl-hero-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,.15);
+}
+
+/* ── Ensure hero text is above overlay ── */
+.bl-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .bl-hero-orb--1 { width: 350px; height: 350px; top: -15%; }
+  .bl-hero-orb--2 { width: 250px; height: 250px; }
+  .bl-hero-orb--3 { display: none; }
+  .bl-hero-stats { gap: 16px; }
+  .bl-hero-stat-num { font-size: 17px; }
+}

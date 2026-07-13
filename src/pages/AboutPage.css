@@ -1,0 +1,733 @@
+/* ==========================================
+   ABOUT PAGE — Next-Level Premium Design
+   ========================================== */
+
+/* ── Keyframes ── */
+@keyframes abFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes abFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes abScaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes abFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes abOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(20px, -25px) scale(1.05); }
+  50%      { transform: translate(-12px, 15px) scale(0.95); }
+  75%      { transform: translate(10px, -10px) scale(1.02); }
+}
+@keyframes abPing {
+  0%   { transform: scale(1); opacity: .6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes abCountUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes abShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes abBorderGlow {
+  0%, 100% { border-color: rgba(245,148,31,.2); }
+  50%      { border-color: rgba(245,148,31,.5); }
+}
+@keyframes abRevealLine {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+@keyframes abPulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(245,148,31,.15); }
+  50%      { box-shadow: 0 0 40px rgba(245,148,31,.25); }
+}
+
+/* ==========================================
+   HERO — Premium Animated Hero
+   ========================================== */
+.ab-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated gradient orbs */
+.ab-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  animation: abOrbFloat 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.ab-hero-orb--1 {
+  width: 550px; height: 550px;
+  top: -25%; right: -8%;
+  background: radial-gradient(circle, rgba(245,148,31,.2) 0%, transparent 60%);
+  animation-delay: 0s;
+}
+.ab-hero-orb--2 {
+  width: 400px; height: 400px;
+  bottom: -20%; left: -5%;
+  background: radial-gradient(circle, rgba(16,40,90,.35) 0%, transparent 60%);
+  animation-delay: 3s;
+}
+.ab-hero-orb--3 {
+  width: 280px; height: 280px;
+  top: 25%; left: 60%;
+  background: radial-gradient(circle, rgba(245,148,31,.08) 0%, transparent 60%);
+  animation-delay: 6s;
+}
+
+/* Grid pattern overlay */
+.ab-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Badge */
+.ab-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 100px;
+  padding: 6px 18px 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 22px;
+  animation: abFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .1s;
+}
+.ab-hero-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,.4);
+  flex-shrink: 0;
+  position: relative;
+}
+.ab-hero-badge-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(34,197,94,.2);
+  animation: abPing 2s ease-in-out infinite;
+}
+
+/* Hero content */
+.ab-hero .container {
+  position: relative;
+  z-index: 2;
+}
+.ab-hero h1 {
+  animation: abFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .2s;
+}
+.ab-hero .page-hero-sub {
+  animation: abFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .3s;
+}
+
+/* Stats bar */
+.ab-hero-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+  animation: abFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .4s;
+}
+.ab-hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+.ab-hero-stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+.ab-hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.ab-hero-stat-divider {
+  width: 1px;
+  background: rgba(255,255,255,.1);
+}
+
+/* ==========================================
+   STORY — Rich Timeline Story
+   ========================================== */
+.ab-story {
+  position: relative;
+}
+.ab-story-content {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Vertical timeline line */
+.ab-story-content::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--orange), var(--gold), transparent);
+  opacity: .3;
+  border-radius: 2px;
+}
+
+/* Story paragraphs */
+.ab-story-content p {
+  position: relative;
+  color: #374151;
+  font-size: 15.5px;
+  line-height: 1.85;
+  margin-bottom: 22px;
+  padding-left: 32px;
+}
+
+/* Timeline dot on first paragraph */
+.ab-story-content p:first-of-type::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px rgba(245,148,31,.2);
+  z-index: 2;
+}
+
+/* Drop cap */
+.ab-story-content p:first-of-type::first-letter {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--orange);
+  float: left;
+  line-height: .8;
+  margin-right: 10px;
+  margin-top: 4px;
+  font-family: Georgia, serif;
+}
+
+/* ==========================================
+   MISSION & VISION — Dual Cards
+   ========================================== */
+.ab-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.ab-mission-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.22,1,.36,1),
+              box-shadow .35s ease;
+}
+.ab-mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(10,26,60,.08);
+}
+
+/* Gradient top border */
+.ab-mission-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 18px 18px 0 0;
+}
+.ab-mission-card--mission::before {
+  background: linear-gradient(90deg, var(--orange), #f97316, var(--orange));
+}
+.ab-mission-card--vision::before {
+  background: linear-gradient(90deg, var(--navy), #1e3a5f, var(--navy));
+}
+
+/* Icon */
+.ab-mission-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+.ab-mission-card--mission .ab-mission-icon {
+  background: linear-gradient(135deg, rgba(245,148,31,.12), rgba(245,148,31,.04));
+}
+.ab-mission-card--vision .ab-mission-icon {
+  background: linear-gradient(135deg, rgba(10,26,60,.08), rgba(10,26,60,.03));
+}
+
+.ab-mission-card h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.ab-mission-card p {
+  font-size: 14.5px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+.ab-mission-card blockquote {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.7;
+  font-style: italic;
+  padding: 16px 0 0;
+  margin: 16px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================
+   STATS COUNTER — Animated Numbers
+   ========================================== */
+.ab-stats {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%);
+  overflow: hidden;
+}
+
+/* Subtle orbs in stats section */
+.ab-stats-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.ab-stats-orb--1 {
+  width: 400px; height: 400px;
+  top: -50%; right: -10%;
+  background: radial-gradient(circle, rgba(245,148,31,.08) 0%, transparent 60%);
+}
+.ab-stats-orb--2 {
+  width: 300px; height: 300px;
+  bottom: -30%; left: -5%;
+  background: radial-gradient(circle, rgba(255,255,255,.03) 0%, transparent 60%);
+}
+
+.ab-stats .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ab-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ab-stat-item {
+  text-align: center;
+  animation: abFadeUp .5s ease both;
+}
+.ab-stat-item:nth-child(1) { animation-delay: .1s; }
+.ab-stat-item:nth-child(2) { animation-delay: .2s; }
+.ab-stat-item:nth-child(3) { animation-delay: .3s; }
+.ab-stat-item:nth-child(4) { animation-delay: .4s; }
+
+.ab-stat-number {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.ab-stat-number span {
+  font-size: 28px;
+}
+.ab-stat-label {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ab-stat-divider {
+  width: 60px;
+  height: 2px;
+  background: rgba(245,148,31,.3);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ==========================================
+   VALUES — Premium Benefit Cards
+   ========================================== */
+.ab-values {
+  position: relative;
+}
+.ab-values .benefits-grid {
+  gap: 28px;
+}
+.ab-value-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: transform .35s cubic-bezier(.22,1,.36,1),
+              box-shadow .35s ease,
+              border-color .35s ease;
+  overflow: hidden;
+}
+
+/* Gradient hover top border */
+.ab-value-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity .35s ease, left .35s ease, right .35s ease;
+}
+.ab-value-card:hover::before {
+  opacity: 1;
+  left: 0;
+  right: 0;
+}
+.ab-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(10,26,60,.1), 0 4px 12px rgba(0,0,0,.04);
+  border-color: rgba(245,148,31,.2);
+}
+
+/* Icon circle */
+.ab-value-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(245,148,31,.12), rgba(245,148,31,.04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform .35s ease, background .35s ease;
+}
+.ab-value-card:hover .ab-value-icon-circle {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(245,148,31,.18), rgba(245,148,31,.06));
+}
+.ab-value-icon-circle .benefit-icon {
+  font-size: 24px;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.ab-value-card h3 {
+  font-size: 17px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  transition: color .25s ease;
+}
+.ab-value-card:hover h3 {
+  color: var(--orange-dark);
+}
+.ab-value-card p {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ==========================================
+   TRUST — Premium Shield Checklist
+   ========================================== */
+.ab-trust {
+  position: relative;
+  background: var(--light);
+}
+.ab-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.ab-trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.ab-trust-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10,26,60,.06);
+  border-color: rgba(245,148,31,.15);
+}
+
+/* Shield icon */
+.ab-trust-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(245,148,31,.12), rgba(245,148,31,.04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 1px;
+  transition: background .25s ease;
+}
+.ab-trust-item:hover .ab-trust-icon {
+  background: linear-gradient(135deg, rgba(245,148,31,.2), rgba(245,148,31,.08));
+}
+
+.ab-trust-text {
+  flex: 1;
+}
+.ab-trust-text strong {
+  display: block;
+  font-size: 15px;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.ab-trust-text p {
+  font-size: 13.5px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================
+   FAQ — Interactive Accordion
+   ========================================== */
+.ab-faq {
+  position: relative;
+}
+.ab-faq .faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ab-faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .3s ease, box-shadow .3s ease;
+  position: relative;
+}
+.ab-faq-item:hover {
+  border-color: rgba(245,148,31,.15);
+}
+.ab-faq-item--open {
+  border-color: rgba(245,148,31,.3);
+  box-shadow: 0 4px 20px rgba(245,148,31,.06);
+}
+
+/* Gradient left accent */
+.ab-faq-item::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--orange), var(--gold));
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 1;
+}
+.ab-faq-item--open::before {
+  opacity: 1;
+}
+
+.ab-faq-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  transition: color .25s ease, background .25s ease;
+  position: relative;
+}
+.ab-faq-item-head:hover {
+  color: var(--orange-dark);
+  background: #fafbfc;
+}
+
+/* Toggle icon */
+.ab-faq-toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .35s ease, background .35s ease;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray);
+  line-height: 1;
+}
+.ab-faq-item--open .ab-faq-toggle {
+  transform: rotate(45deg);
+  background: rgba(245,148,31,.1);
+  color: var(--orange);
+}
+
+/* Answer */
+.ab-faq-answer {
+  padding: 0 22px 18px;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  display: none;
+}
+.ab-faq-item--open .ab-faq-answer {
+  display: block;
+  animation: abFadeUp .35s ease both;
+}
+
+/* ==========================================
+   CTA — Premium Banner
+   ========================================== */
+.ab-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Floating orbs in CTA */
+.ab-cta-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+  animation: abOrbFloat 12s ease-in-out infinite;
+}
+.ab-cta-orb--1 {
+  width: 350px; height: 350px;
+  top: -30%; right: -5%;
+  background: radial-gradient(circle, rgba(245,148,31,.15) 0%, transparent 60%);
+  animation-delay: 0s;
+}
+.ab-cta-orb--2 {
+  width: 250px; height: 250px;
+  bottom: -20%; left: -5%;
+  background: radial-gradient(circle, rgba(16,40,90,.3) 0%, transparent 60%);
+  animation-delay: 4s;
+}
+.ab-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 992px) {
+  .ab-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ab-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .ab-trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .ab-hero-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .ab-stat-number {
+    font-size: 32px;
+  }
+  .ab-stat-number span {
+    font-size: 20px;
+  }
+  .ab-hero-stats {
+    gap: 16px;
+  }
+  .ab-hero-stat-num {
+    font-size: 22px;
+  }
+  .ab-mission-card {
+    padding: 28px 22px;
+  }
+  .ab-value-card {
+    padding: 24px 20px;
+  }
+  .ab-trust-item {
+    padding: 14px 16px;
+  }
+  .ab-story-content p {
+    padding-left: 20px;
+    font-size: 14.5px;
+  }
+  .ab-story-content p:first-of-type::first-letter {
+    font-size: 40px;
+  }
+  .ab-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .ab-hero h1 {
+    font-size: 28px;
+  }
+}

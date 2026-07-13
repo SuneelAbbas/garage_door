@@ -1,0 +1,379 @@
+/* ==========================================
+   CONTACT PAGE — Premium Next-Level Design
+   ========================================== */
+
+/* ── Keyframes ── */
+@keyframes cpFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cpOrbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(20px, -25px) scale(1.05); }
+  50%      { transform: translate(-12px, 15px) scale(0.95); }
+  75%      { transform: translate(10px, -10px) scale(1.02); }
+}
+@keyframes cpPing {
+  0%   { transform: scale(1); opacity: .6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes cpShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ==========================================
+   HERO — Premium Animated
+   ========================================== */
+.cp-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cp-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  animation: cpOrbFloat 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.cp-hero-orb--1 {
+  width: 550px; height: 550px;
+  top: -25%; right: -8%;
+  background: radial-gradient(circle, rgba(245,148,31,.2) 0%, transparent 60%);
+  animation-delay: 0s;
+}
+.cp-hero-orb--2 {
+  width: 400px; height: 400px;
+  bottom: -20%; left: -5%;
+  background: radial-gradient(circle, rgba(16,40,90,.35) 0%, transparent 60%);
+  animation-delay: 3s;
+}
+.cp-hero-orb--3 {
+  width: 280px; height: 280px;
+  top: 25%; left: 60%;
+  background: radial-gradient(circle, rgba(245,148,31,.08) 0%, transparent 60%);
+  animation-delay: 6s;
+}
+.cp-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px);
+  pointer-events: none;
+  z-index: 0;
+}
+.cp-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 100px;
+  padding: 6px 18px 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 22px;
+  animation: cpFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .1s;
+}
+.cp-hero-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,.4);
+  flex-shrink: 0;
+  position: relative;
+}
+.cp-hero-badge-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(34,197,94,.2);
+  animation: cpPing 2s ease-in-out infinite;
+}
+.cp-hero .container { position: relative; z-index: 2; }
+.cp-hero h1 { animation: cpFadeUp .5s cubic-bezier(.22,1,.36,1) both; animation-delay: .2s; }
+.cp-hero .page-hero-sub { animation: cpFadeUp .5s cubic-bezier(.22,1,.36,1) both; animation-delay: .3s; }
+
+/* Hero stats */
+.cp-hero-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+  animation: cpFadeUp .5s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: .4s;
+}
+.cp-hero-stat { display: flex; flex-direction: column; }
+.cp-hero-stat-num {
+  font-size: 26px; font-weight: 800;
+  color: var(--orange); line-height: 1;
+}
+.cp-hero-stat-label {
+  font-size: 12px; color: rgba(255,255,255,.55);
+  font-weight: 500; margin-top: 4px;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.cp-hero-stat-divider { width: 1px; background: rgba(255,255,255,.1); }
+
+/* ==========================================
+   CONTACT CARDS — Premium
+   ========================================== */
+.cp-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.cp-card {
+  text-align: center;
+  padding: 32px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.22,1,.36,1),
+              box-shadow .35s ease,
+              border-color .35s ease;
+}
+.cp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(10,26,60,.08);
+  border-color: rgba(245,148,31,.15);
+}
+.cp-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 20px; right: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity .35s ease, left .35s ease, right .35s ease;
+}
+.cp-card:hover::before {
+  opacity: 1;
+  left: 0; right: 0;
+}
+.cp-card-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(245,148,31,.12), rgba(245,148,31,.04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 14px;
+  transition: transform .35s ease;
+}
+.cp-card:hover .cp-card-icon {
+  transform: scale(1.08);
+}
+.cp-card h3 {
+  font-size: 15px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.cp-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+.cp-card-link {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
+  transition: color .2s;
+}
+.cp-card-link:hover { color: var(--orange-dark); }
+.cp-card-emergency {
+  font-weight: 700;
+  color: var(--orange);
+  margin-top: 4px;
+}
+
+/* ==========================================
+   FORM — Premium Booking
+   ========================================== */
+.cp-form-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 4px 24px rgba(10,26,60,.04);
+}
+.cp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.cp-form-group {
+  position: relative;
+}
+.cp-form-group input,
+.cp-form-group select,
+.cp-form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--navy);
+  background: #fff;
+  transition: border-color .25s ease, box-shadow .25s ease;
+  font-family: inherit;
+  outline: none;
+}
+.cp-form-group input:focus,
+.cp-form-group select:focus,
+.cp-form-group textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(245,148,31,.08);
+}
+.cp-form-group input::placeholder,
+.cp-form-group textarea::placeholder {
+  color: #94a3b8;
+}
+.cp-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.cp-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  margin-bottom: 0;
+}
+.cp-form-submit {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cp-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,148,31,.25);
+}
+
+/* ==========================================
+   SERVICE AREA — Premium Pills
+   ========================================== */
+.cp-area-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cp-area-pill {
+  padding: 10px 22px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  transition: all .25s ease;
+}
+.cp-area-pill:hover {
+  border-color: rgba(245,148,31,.3);
+  color: var(--orange);
+  background: rgba(245,148,31,.03);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10,26,60,.06);
+}
+
+/* ==========================================
+   PROCESS STEPS (Enhanced)
+   ========================================== */
+.cp-process {
+  position: relative;
+}
+.cp-process .process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.cp-process .process-steps::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: calc(16.66% + 24px);
+  right: calc(16.66% + 24px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+  opacity: .3;
+  z-index: 0;
+}
+.cp-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 8px;
+}
+.cp-step-num {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(245,148,31,.25);
+  transition: transform .35s ease;
+}
+.cp-step:hover .cp-step-num { transform: scale(1.1); }
+.cp-step h3 {
+  font-size: 16px; color: var(--navy);
+  margin-bottom: 8px; font-weight: 700;
+}
+.cp-step p {
+  font-size: 13px; color: var(--gray);
+  line-height: 1.6; max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 992px) {
+  .cp-cards { grid-template-columns: repeat(2, 1fr); }
+  .cp-process .process-steps { gap: 24px; }
+  .cp-process .process-steps::before { display: none; }
+  .cp-hero-stats { gap: 20px; flex-wrap: wrap; }
+}
+@media (max-width: 768px) {
+  .cp-cards { grid-template-columns: 1fr; }
+  .cp-form-row { grid-template-columns: 1fr; }
+  .cp-form-wrap { padding: 24px 18px; }
+  .cp-hero-stats { gap: 16px; }
+  .cp-hero-stat-num { font-size: 22px; }
+  .cp-hero h1 { font-size: 28px; }
+}
