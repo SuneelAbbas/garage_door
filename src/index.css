@@ -229,6 +229,13 @@ ul{list-style:none;}
 .dropdown-item.active {
   color: var(--navy);
   font-weight: 600;
+  background: #f0f4fe;
+}
+.dropdown-item.active .dropdown-item-accent {
+  transform: translateY(-50%) scaleY(1);
+}
+.dropdown-item.active .dropdown-item-icon {
+  background: #e0e8f5;
 }
 .dropdown-item-icon {
   display: inline-flex;
@@ -474,6 +481,12 @@ ul{list-style:none;}
   transition: color .15s;
 }
 .mobile-sub-link:hover { color: var(--orange); }
+.mobile-sub-link.active {
+  color: var(--navy);
+  font-weight: 600;
+  background: #f0f4fe;
+  border-radius: 8px;
+}
 .mobile-sub-icon {
   display: inline-flex;
   align-items: center;

@@ -1,3 +1,5 @@
+import { IconCheckCircle, IconArrowRight, IconStar, IconClock, IconAward, IconChat } from "../data/icons";
+
 export default function Hero({ heroImage }) {
   return (
     <header className="hero">
@@ -40,24 +42,15 @@ export default function Hero({ heroImage }) {
           {/* ── Horizontal Pill Badges (consistent check-circle icons) ── */}
           <div className="hero-badges">
             <span className="hero-badge">
-              <svg className="hero-badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="10" cy="10" r="8" />
-                <path d="M7 10l2 2 4-4" />
-              </svg>
+              <IconCheckCircle size={16} className="hero-badge-icon" />
               Same-Day Service
             </span>
             <span className="hero-badge">
-              <svg className="hero-badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="10" cy="10" r="8" />
-                <path d="M7 10l2 2 4-4" />
-              </svg>
+              <IconCheckCircle size={16} className="hero-badge-icon" />
               Licensed & Insured
             </span>
             <span className="hero-badge">
-              <svg className="hero-badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="10" cy="10" r="8" />
-                <path d="M7 10l2 2 4-4" />
-              </svg>
+              <IconCheckCircle size={16} className="hero-badge-icon" />
               5-Star Rated Local Business
             </span>
           </div>
@@ -77,9 +70,7 @@ export default function Hero({ heroImage }) {
             </a>
             <a href="#quote" className="btn-hero btn-hero--secondary">
               <span className="btn-hero-label">GET FREE ESTIMATE</span>
-              <svg className="btn-hero-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 10h10M10 5l5 5-5 5" />
-              </svg>
+              <IconArrowRight size={16} className="btn-hero-arrow" />
             </a>
           </div>
         </div>
@@ -105,21 +96,11 @@ export default function Hero({ heroImage }) {
             {/* ── Floating Stat Card (Trustpilot) ── */}
             <div className="hero-stat-card">
               <div className="hero-stat-stars">
-                <svg className="hero-stat-star" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 13.71l-4.78 2.51.91-5.33-3.86-3.77 5.34-.78L10 1z" />
-                </svg>
-                <svg className="hero-stat-star" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 13.71l-4.78 2.51.91-5.33-3.86-3.77 5.34-.78L10 1z" />
-                </svg>
-                <svg className="hero-stat-star" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 13.71l-4.78 2.51.91-5.33-3.86-3.77 5.34-.78L10 1z" />
-                </svg>
-                <svg className="hero-stat-star" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 13.71l-4.78 2.51.91-5.33-3.86-3.77 5.34-.78L10 1z" />
-                </svg>
-                <svg className="hero-stat-star" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 13.71l-4.78 2.51.91-5.33-3.86-3.77 5.34-.78L10 1z" />
-                </svg>
+                <IconStar size={16} className="hero-stat-star" />
+                <IconStar size={16} className="hero-stat-star" />
+                <IconStar size={16} className="hero-stat-star" />
+                <IconStar size={16} className="hero-stat-star" />
+                <IconStar size={16} className="hero-stat-star" />
               </div>
               <span className="hero-stat-num">4.9</span>
               <span className="hero-stat-label">Trustpilot</span>
@@ -129,27 +110,19 @@ export default function Hero({ heroImage }) {
           {/* ── 3 Floating Badges (all animated consistently) ── */}
           <div className="hero-float hero-float--1">
             <span className="hero-float-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
+              <IconClock size={20} />
             </span>
             <span className="hero-float-label">24/7 Service</span>
           </div>
           <div className="hero-float hero-float--2">
             <span className="hero-float-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 12l2 2 4-4" />
-                <path d="M12 2a10 10 0 1010 10 10 10 0 00-10-10z" />
-              </svg>
+              <IconCheckCircle size={20} />
             </span>
             <span className="hero-float-label">Top Rated</span>
           </div>
           <div className="hero-float hero-float--3">
             <span className="hero-float-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
+              <IconAward size={20} />
             </span>
             <span className="hero-float-label">4.9 Rating</span>
           </div>
@@ -161,9 +134,7 @@ export default function Hero({ heroImage }) {
         <div className="container">
           <div className="hero-form-card">
             <div className="hero-form-header">
-              <svg className="hero-form-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-              </svg>
+              <IconChat size={20} className="hero-form-header-icon" />
               <span className="hero-form-header-text">Send us a Message</span>
               <span className="hero-form-badge">Free Estimate</span>
             </div>
@@ -206,15 +177,10 @@ export default function Hero({ heroImage }) {
               <div className="hero-form-footer">
                 <button type="submit" className="hero-form-btn">
                   Send Message
-                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 10h10M10 5l5 5-5 5" />
-                  </svg>
+                  <IconArrowRight size={16} />
                 </button>
                 <span className="hero-form-trust">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                    <path d="M22 4L12 14.01l-3-3" />
-                  </svg>
+                  <IconCheckCircle size={16} />
                   We respond within 10 minutes, even after hours
                 </span>
               </div>

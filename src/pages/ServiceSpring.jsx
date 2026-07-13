@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicePages.css";
+import { IconWrench, IconShield, IconStar, IconLightning } from "../data/icons";
 
 const benefits = [
   {
-    icon: "🔧",
+    icon: <IconWrench size={24} />,
     title: "Expert Knowledge of Torsion & Extension Springs",
     text: "We assess your door's weight and size to install the correct spring type with the right tension every time.",
   },
   {
-    icon: "🛡️",
+    icon: <IconShield size={24} />,
     title: "Safety-First Approach",
     text: "Springs are under lethal tension. Our technicians are trained in advanced safety protocols and use industry-spec tools to prevent accidents.",
   },
   {
-    icon: "⭐",
+    icon: <IconStar size={24} />,
     title: "High-Quality, Long-Lasting Springs",
     text: "We use premium-grade oil-tempered springs rated for 20,000+ cycles, so your replacement lasts years longer than budget alternatives.",
   },
   {
-    icon: "⚡",
+    icon: <IconLightning size={24} />,
     title: "Fast Turnaround, Same-Day Service",
     text: "Most spring replacements are completed within 1–2 hours, and we carry a full range of springs on our trucks.",
   },

@@ -1,22 +1,13 @@
+import { IconClock, IconLayers, IconShield, IconDollar, IconCheck } from "../data/icons";
+
 const leftFeatures = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
+    icon: <IconClock size={24} />,
     title: "24/7 Emergency Garage Door Repairs",
     text: "24/7 garage door repairs for safety and reliability.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
+    icon: <IconLayers size={24} />,
     title: "Customized Garage Door Solutions",
     text: "Personalized solutions ensuring secure, smooth garage doors.",
   },
@@ -24,20 +15,12 @@ const leftFeatures = [
 
 const rightFeatures = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    icon: <IconShield size={24} />,
     title: "Experts You Can Trust Forever",
     text: "Trusted experts delivering lasting garage door quality.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-      </svg>
-    ),
+    icon: <IconDollar size={24} />,
     title: "Affordable Pricing, Exceptional Value",
     text: "Quality garage door services at affordable prices.",
   },
@@ -73,10 +56,7 @@ export default function Features() {
             </video>
             <div className="feature-center-overlay" />
             <div className="feature-center-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                <polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
+              <IconCheck size={28} />
             </div>
             <h3>Garage Door Services You Can Count On</h3>
             <p>Family-owned and locally operated in Atlanta since 2010</p>

@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicePages.css";
+import { IconTag, IconRemote, IconBattery, IconQuiet } from "../data/icons";
 
 const benefits = [
   {
-    icon: "🏷️",
+    icon: <IconTag size={24} />,
     title: "All Major Brands Serviced",
     text: "We work on Chamberlain, LiftMaster, Genie, Craftsman, Sommer, and more, with genuine replacement parts in stock.",
   },
   {
-    icon: "📱",
+    icon: <IconRemote size={24} />,
     title: "Smart Opener Experts",
     text: "Upgrade to a Wi-Fi-enabled opener with smartphone control, voice assistant compatibility, and real-time alerts — we install and set up everything.",
   },
   {
-    icon: "🔋",
+    icon: <IconBattery size={24} />,
     title: "Battery Backup Included",
     text: "Our recommended openers include built-in battery backup, so you can still open and close your door during power outages common in Atlanta storms.",
   },
   {
-    icon: "🤫",
+    icon: <IconQuiet size={24} />,
     title: "Quiet, Vibration-Free Operation",
     text: "We install belt-drive and DC motor openers that run whisper-quiet — perfect for homes with bedrooms above or adjacent to the garage.",
   },

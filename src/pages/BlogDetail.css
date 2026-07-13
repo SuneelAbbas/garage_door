@@ -173,6 +173,72 @@
   margin-bottom: 16px;
 }
 
+/* ── WordPress HTML Content ── */
+.bd-wordpress-content {
+  font-size: 15.5px;
+  color: #374151;
+  line-height: 1.85;
+}
+.bd-wordpress-content h2 {
+  font-size: 24px;
+  color: var(--navy);
+  margin: 40px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--orange);
+  position: relative;
+}
+.bd-wordpress-content h2::before {
+  content: "◆";
+  color: var(--orange);
+  font-size: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.bd-wordpress-content h3 {
+  font-size: 19px;
+  color: var(--navy);
+  margin: 32px 0 12px;
+}
+.bd-wordpress-content p {
+  font-size: 15.5px;
+  color: #374151;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.bd-wordpress-content p:first-of-type::first-letter {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--orange);
+  float: left;
+  line-height: .8;
+  margin-right: 10px;
+  margin-top: 5px;
+  font-family: Georgia, serif;
+}
+.bd-wordpress-content ul,
+.bd-wordpress-content ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+.bd-wordpress-content li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.bd-wordpress-content a {
+  color: var(--orange);
+  text-decoration: underline;
+  transition: opacity .2s;
+}
+.bd-wordpress-content a:hover {
+  opacity: .8;
+}
+.bd-wordpress-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+
 /* ==========================================
    SHARE & FOOTER
    ========================================== */

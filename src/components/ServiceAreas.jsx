@@ -1,4 +1,5 @@
 import areasDoorImage from "../assets/images/garage_door_image.png";
+import { IconLocation } from "../data/icons";
 
 const areas = [
   "ATLANTA", "MARIETTA", "SMYRNA", "KENNESAW", "ROSWELL",
@@ -31,17 +32,14 @@ export default function ServiceAreas() {
         </div>
 
         <div className="areas-counter">
-          <span className="areas-counter-icon">📍</span>
+          <IconLocation size={18} />
           20+ Cities Served
         </div>
 
         <div className="areas-grid">
           {areas.map((area) => (
             <div className="area-chip" key={area}>
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 2a6 6 0 00-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 00-6-6z" />
-                <circle cx="10" cy="8" r="2" />
-              </svg>
+              <IconLocation size={16} />
               {area}
             </div>
           ))}

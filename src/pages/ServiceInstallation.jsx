@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicePages.css";
+import { IconAward, IconShield, IconLightning, IconDollar } from "../data/icons";
 
 const benefits = [
   {
-    icon: "🏆",
+    icon: <IconAward size={24} />,
     title: "Premium Brands, Custom Fit",
     text: "We partner with leading manufacturers to offer a wide range of styles, materials, and insulation levels so you get a door that matches your home and budget.",
   },
   {
-    icon: "🛡️",
+    icon: <IconShield size={24} />,
     title: "Licensed & Insured Professionals",
     text: "Every installation is performed by our trained, background-checked technicians who take pride in precise, code-compliant work.",
   },
   {
-    icon: "⚡",
+    icon: <IconLightning size={24} />,
     title: "Same-Day Service Available",
     text: "Need a new door fast? We offer same-day installation for select models across the Atlanta area.",
   },
   {
-    icon: "💰",
+    icon: <IconDollar size={24} />,
     title: "Free, Transparent Quotes",
     text: "We provide detailed written estimates with no hidden fees. The price we quote is the price you pay — no surprises.",
   },

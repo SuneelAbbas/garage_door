@@ -85,12 +85,19 @@ export default function BlogDetail() {
 
         <div className="container">
           <div className="bd-content-wrap">
-            {post.content.map((section, i) => (
-              <div key={i} className="bd-section">
-                <h2>{section.heading}</h2>
-                <p>{section.body}</p>
-              </div>
-            ))}
+            {typeof post.content === "string" ? (
+              <div
+                className="bd-wordpress-content"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            ) : (
+              post.content.map((section, i) => (
+                <div key={i} className="bd-section">
+                  <h2>{section.heading}</h2>
+                  <p>{section.body}</p>
+                </div>
+              ))
+            )}
 
             {/* Share */}
             <div className="bd-share">

@@ -1,4 +1,5 @@
 import aboutImage from "../assets/images/garage_image.png";
+import { IconCheckCircle, IconArrowRight } from "../data/icons";
 
 export default function About() {
   return (
@@ -36,42 +37,32 @@ export default function About() {
           <div className="icon-chip-list">
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Reliable installation repairs
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               24/7 emergency support
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Durable, high-quality materials
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Customer-focused trusted service
             </span>
           </div>
           <a href="#" className="btn btn--primary">
             LEARN MORE ABOUT OUR SERVICES
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 10h10M10 5l5 5-5 5" />
-            </svg>
+            <IconArrowRight size={16} />
           </a>
         </div>
       </div>

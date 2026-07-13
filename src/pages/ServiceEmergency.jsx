@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicePages.css";
+import { IconClock, IconTruck, IconWrench, IconShield } from "../data/icons";
 
 const benefits = [
   {
-    icon: "🕐",
+    icon: <IconClock size={24} />,
     title: "24/7 Availability, 365 Days a Year",
     text: "Evenings, weekends, holidays — we never stop answering calls from Atlanta homeowners in need.",
   },
   {
-    icon: "🚚",
+    icon: <IconTruck size={24} />,
     title: "Rapid Response Across Metro Atlanta",
     text: "Our technicians are strategically located to reach you quickly, typically within 60–90 minutes of your call.",
   },
   {
-    icon: "🔧",
+    icon: <IconWrench size={24} />,
     title: "Fully Stocked Emergency Trucks",
     text: "We carry springs, cables, openers, sensors, rollers, and tools for nearly every make and model, so we can fix most issues in a single visit.",
   },
   {
-    icon: "🛡️",
+    icon: <IconShield size={24} />,
     title: "Licensed & Insured for Emergency Work",
     text: "Safety is even more critical in an emergency. Our team follows strict protocols to secure your property and prevent further damage.",
   },

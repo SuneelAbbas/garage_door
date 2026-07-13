@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IconArrowRight, IconShieldCheck } from "../data/icons";
 
 const faqs = [
   {
@@ -125,15 +126,11 @@ export default function FaqBook() {
               </div>
               <button type="submit" className="btn btn--primary">
                 BOOK APPOINTMENT
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 10h10M10 5l5 5-5 5" />
-                </svg>
+                <IconArrowRight size={16} />
               </button>
             </form>
             <div className="form-trust">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
+              <IconShieldCheck size={18} />
               We respond within 30 minutes during business hours
             </div>
           </div>

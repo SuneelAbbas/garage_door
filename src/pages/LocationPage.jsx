@@ -1,36 +1,38 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { locations } from "../data/locations";
+import {
+  IconArrowRight,
+  IconPhone,
+  IconStar,
+  IconDoor,
+  IconWrench,
+  IconSpring,
+  IconRefresh,
+  IconAlarm,
+  IconPalette,
+  IconHome,
+  IconTrophy,
+  IconShield,
+  IconLightning,
+  IconDollar,
+  IconDiamond,
+  IconLocation,
+  IconCheckCircle,
+} from "../data/icons";
 import "./LocationPage.css";
 
 /* ── Gallery Images ── */
 import beforeImg from "../assets/images/before_garage_door.png";
 import afterImg from "../assets/images/garage_door_image.png";
 
-/* ── SVG Icons ── */
-const ArrowRight = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M12 5l7 7-7 7" />
-  </svg>
-);
-const PhoneIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-  </svg>
-);
-const StarIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-  </svg>
-);
-
 /* ── Services list ── */
 const servicesList = [
-  { name: "New Garage Door Installation", path: "/services/installation", icon: "🚪" },
-  { name: "Garage Door Repairs", path: "/services/repairs", icon: "🔧" },
-  { name: "Spring Replacement", path: "/services/spring-replacement", icon: "⚙️" },
-  { name: "Opener Repair & Installation", path: "/services/opener", icon: "🔄" },
-  { name: "Emergency Service", path: "/services/emergency", icon: "🚨" },
+  { name: "New Garage Door Installation", path: "/services/installation", icon: <IconDoor size={24} /> },
+  { name: "Garage Door Repairs", path: "/services/repairs", icon: <IconWrench size={24} /> },
+  { name: "Spring Replacement", path: "/services/spring-replacement", icon: <IconSpring size={24} /> },
+  { name: "Opener Repair & Installation", path: "/services/opener", icon: <IconRefresh size={24} /> },
+  { name: "Emergency Service", path: "/services/emergency", icon: <IconAlarm size={24} /> },
 ];
 
 /* ── Testimonials ── */
@@ -60,10 +62,10 @@ const testimonials = [
 
 /* ── Process steps ── */
 const processSteps = [
-  { num: "01", icon: "📞", title: "Free Consultation", desc: "We visit your home, measure your opening, and discuss your style and budget." },
-  { num: "02", icon: "🎨", title: "Door Selection", desc: "Choose from steel, wood, or composite in hundreds of colors and configurations." },
-  { num: "03", icon: "🔧", title: "Professional Install", desc: "Our team handles removal, track setup, spring installation, and calibration." },
-  { num: "04", icon: "✨", title: "Walkthrough & Cleanup", desc: "We clean everything, haul away the old door, and show you your new door's features." },
+  { num: "01", icon: <IconPhone size={24} />, title: "Free Consultation", desc: "We visit your home, measure your opening, and discuss your style and budget." },
+  { num: "02", icon: <IconPalette size={24} />, title: "Door Selection", desc: "Choose from steel, wood, or composite in hundreds of colors and configurations." },
+  { num: "03", icon: <IconWrench size={24} />, title: "Professional Install", desc: "Our team handles removal, track setup, spring installation, and calibration." },
+  { num: "04", icon: <IconStar size={24} />, title: "Walkthrough & Cleanup", desc: "We clean everything, haul away the old door, and show you your new door's features." },
 ];
 
 /* ── Gallery items ── */
@@ -168,7 +170,7 @@ export default function LocationPage() {
             <h1>Location Not Found</h1>
             <p>The location you are looking for does not exist.</p>
             <Link to="/" className="btn btn--primary" style={{ marginTop: 20 }}>
-              Back to Home <ArrowRight />
+              Back to Home <IconArrowRight size={16} />
             </Link>
           </div>
         </section>
@@ -188,6 +190,8 @@ export default function LocationPage() {
     nearby.push(locations[(currentIdx + 1) % locations.length]);
     nearby.push(locations[(currentIdx + 2) % locations.length]);
   }
+
+  const benefitIcons = [IconTrophy, IconShield, IconLightning, IconDollar];
 
   return (
     <div className="loc-detail">
@@ -213,9 +217,9 @@ export default function LocationPage() {
 
           {/* Hero badges */}
           <div className="loc-detail-hero-badges">
-            <span className="loc-detail-hero-badge">📍 {loc.fullName}</span>
-            <span className="loc-detail-hero-badge">✅ Free Estimates</span>
-            <span className="loc-detail-hero-badge">⭐ 4.9 Avg. Rating</span>
+            <span className="loc-detail-hero-badge"><IconLocation size={16} /> {loc.fullName}</span>
+            <span className="loc-detail-hero-badge"><IconCheckCircle size={16} /> Free Estimates</span>
+            <span className="loc-detail-hero-badge"><IconStar size={16} /> 4.9 Avg. Rating</span>
           </div>
 
           <h1>
@@ -226,10 +230,10 @@ export default function LocationPage() {
 
           <div className="loc-detail-hero-actions">
             <a href="tel:4706664097" className="btn btn--primary">
-              <PhoneIcon /> Call 470-666-4097
+              <IconPhone size={16} /> Call 470-666-4097
             </a>
             <Link to="/contact" className="btn btn--white">
-              Get Free Quote <ArrowRight />
+              Get Free Quote <IconArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -254,7 +258,7 @@ export default function LocationPage() {
                 </div>
               </div>
               <div className="loc-about-stat">
-                <span className="loc-about-stat-icon">🏆</span>
+                <span className="loc-about-stat-icon"><IconTrophy size={24} /></span>
                 <div>
                   <div className="loc-about-stat-num">12+ Years</div>
                   <div className="loc-about-stat-label">Trusted Service</div>
@@ -266,7 +270,7 @@ export default function LocationPage() {
               <h2>Serving the {loc.name} Community with Excellence</h2>
               <p>{loc.intro}</p>
               <Link to="/about" className="btn btn--secondary">
-                Learn More About Us <ArrowRight />
+                Learn More About Us <IconArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -278,22 +282,22 @@ export default function LocationPage() {
         <div className="container">
           <div className="loc-detail-stats-grid">
             <div className="loc-detail-stat-card" ref={homesServed.ref}>
-              <div className="loc-detail-stat-icon">🏠</div>
+              <div className="loc-detail-stat-icon"><IconHome size={28} /></div>
               <div className="loc-detail-stat-num">{homesServed.val}+</div>
               <div className="loc-detail-stat-label">Homes Served in Area</div>
             </div>
             <div className="loc-detail-stat-card" ref={yearsExp.ref}>
-              <div className="loc-detail-stat-icon">⭐</div>
+              <div className="loc-detail-stat-icon"><IconStar size={28} /></div>
               <div className="loc-detail-stat-num">{yearsExp.val}+</div>
               <div className="loc-detail-stat-label">Years Experience</div>
             </div>
             <div className="loc-detail-stat-card" ref={doorsInstalled.ref}>
-              <div className="loc-detail-stat-icon">🚪</div>
+              <div className="loc-detail-stat-icon"><IconDoor size={28} /></div>
               <div className="loc-detail-stat-num">{doorsInstalled.val.toLocaleString()}+</div>
               <div className="loc-detail-stat-label">Doors Installed</div>
             </div>
             <div className="loc-detail-stat-card" ref={satisfaction.ref}>
-              <div className="loc-detail-stat-icon">💯</div>
+              <div className="loc-detail-stat-icon"><IconDiamond size={28} /></div>
               <div className="loc-detail-stat-num">{satisfaction.val}%</div>
               <div className="loc-detail-stat-label">Customer Satisfaction</div>
             </div>
@@ -313,14 +317,17 @@ export default function LocationPage() {
             </p>
           </div>
           <div className="loc-benefits-grid">
-            {loc.bullets.map((bullet, i) => (
-              <div key={i} className="loc-benefit-card">
-                <div className="loc-benefit-card-icon">
-                  {["🏆", "🛡️", "⚡", "💰"][i % 4]}
+            {loc.bullets.map((bullet, i) => {
+              const BenefitIcon = benefitIcons[i % 4];
+              return (
+                <div key={i} className="loc-benefit-card">
+                  <div className="loc-benefit-card-icon">
+                    <BenefitIcon size={24} />
+                  </div>
+                  <p>{bullet}</p>
                 </div>
-                <p>{bullet}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -342,7 +349,7 @@ export default function LocationPage() {
                 <div className="loc-service-card-icon">{svc.icon}</div>
                 <h3>{svc.name}</h3>
                 <span>
-                  Learn More <ArrowRight />
+                  Learn More <IconArrowRight size={16} />
                 </span>
               </Link>
             ))}
@@ -489,10 +496,10 @@ export default function LocationPage() {
                   key={n.id}
                   className="loc-nearby-card"
                 >
-                  <div className="loc-nearby-card-icon">📍</div>
+                  <div className="loc-nearby-card-icon"><IconLocation size={20} /></div>
                   <h4>{n.name}</h4>
                   <span>
-                    View Location <ArrowRight />
+                    View Location <IconArrowRight size={16} />
                   </span>
                 </Link>
               ))}
@@ -518,7 +525,7 @@ export default function LocationPage() {
             your free new door consultation today.
           </p>
           <a href="tel:4706664097" className="btn btn--primary">
-            <PhoneIcon /> Call 470-666-4097
+            <IconPhone size={16} /> Call 470-666-4097
           </a>
         </div>
       </section>

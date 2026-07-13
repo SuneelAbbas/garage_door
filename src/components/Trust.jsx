@@ -1,4 +1,5 @@
 import trustImage from "../assets/images/garage_vehicle.png";
+import { IconCheckCircle, IconLayers } from "../data/icons";
 
 export default function Trust() {
   return (
@@ -24,44 +25,32 @@ export default function Trust() {
           <div className="icon-chip-list">
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Expert installation and repair services
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Fast and reliable response times
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               High-quality, durable materials
             </span>
             <span className="icon-chip">
               <span className="icon-chip-icon">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 10l4 4 8-8" />
-                </svg>
+                <IconCheckCircle size={16} />
               </span>
               Honest pricing and customer-focused service
             </span>
           </div>
           <div className="mission-card">
             <div className="mission-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              <IconLayers size={24} />
             </div>
             <div className="mission-card-text">
               <strong>Our Mission:</strong>

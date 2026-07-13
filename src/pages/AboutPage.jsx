@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./AboutPage.css";
+import { IconAlarm, IconHammer, IconHandshake, IconNeighborhood, IconShield, IconStar, IconLightning, IconLock } from "../data/icons";
 
 const values = [
   {
-    icon: "⏰",
+    icon: <IconAlarm size={24} />,
     title: "Reliability",
     text: "We show up when we say we will, with the parts and expertise needed to get the job done in one visit. No excuses, no delays.",
   },
   {
-    icon: "🔨",
+    icon: <IconHammer size={24} />,
     title: "Craftsmanship",
     text: "Every spring we wind, every track we align, every opener we program is done to the highest standard. We do not cut corners because your safety depends on our work.",
   },
   {
-    icon: "🤝",
+    icon: <IconHandshake size={24} />,
     title: "Honesty",
     text: "You get upfront pricing, clear explanations, and honest recommendations. We never recommend work you do not need, and we never add surprise charges to your bill.",
   },
   {
-    icon: "🏘️",
+    icon: <IconNeighborhood size={24} />,
     title: "Community",
     text: "We live and work in Atlanta. The families we serve are our neighbors, and building a trusted reputation in this community matters more to us than any single sale.",
   },
@@ -27,22 +28,22 @@ const values = [
 
 const trustItems = [
   {
-    icon: "🛡️",
+    icon: <IconShield size={24} />,
     title: "Licensed & Fully Insured",
     text: "Every Access Edge technician is background-checked, trained, and covered by liability insurance and workers' compensation, so you are protected on every job.",
   },
   {
-    icon: "⭐",
+    icon: <IconStar size={24} />,
     title: "5-Star Rated Across Atlanta",
     text: "We have earned hundreds of 5-star reviews from homeowners throughout Metro Atlanta, with consistent praise for our punctuality, professionalism, and fair pricing.",
   },
   {
-    icon: "⚡",
+    icon: <IconLightning size={24} />,
     title: "Same-Day Service, Every Day",
     text: "Whether it is a routine repair or a full installation, we prioritize same-day service so you are never left waiting.",
   },
   {
-    icon: "🔐",
+    icon: <IconLock size={24} />,
     title: "Warranty-Backed Work",
     text: "Every repair and installation we perform is backed by a warranty on parts and labor. We stand behind our work because we know it is done right.",
   },

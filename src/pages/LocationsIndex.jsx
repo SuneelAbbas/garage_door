@@ -1,26 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { locations } from "../data/locations";
+import { IconSearch, IconMapPin, IconArrowRight, IconNeighborhood, IconHome, IconStar, IconDiamond } from "../data/icons";
 import "./LocationPage.css";
-
-/* ── SVG Icons (inline, no deps) ── */
-const SearchIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
-  </svg>
-);
-
-const MapPinIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M12 5l7 7-7 7" />
-  </svg>
-);
 
 /* ── Stat counter hook ── */
 function useCountUp(end, duration = 1800) {
@@ -118,7 +100,7 @@ export default function LocationsIndex() {
           <div className="loc-search-card">
             <div className="loc-search-row">
               <div className="loc-search-input-wrap">
-                <SearchIcon />
+                <IconSearch size={20} />
                 <input
                   type="text"
                   className="loc-search-input"
@@ -147,7 +129,7 @@ export default function LocationsIndex() {
                   className="loc-card"
                 >
                   <div className="loc-card-icon-wrap">
-                    <MapPinIcon />
+                    <IconMapPin size={24} />
                   </div>
                   <h3>{loc.name}</h3>
                   <p>New Garage Door Installation in {loc.fullName}</p>
@@ -157,7 +139,7 @@ export default function LocationsIndex() {
             </div>
           ) : (
             <div className="loc-no-results">
-              <div className="loc-no-results-icon">🔍</div>
+              <div className="loc-no-results-icon"><IconSearch size={28} /></div>
               <h3>No neighborhoods found</h3>
               <p>
                 We couldn't find "{query}" in our service areas. Try a different
@@ -177,22 +159,22 @@ export default function LocationsIndex() {
         <div className="container">
           <div className="loc-stats-grid">
             <div className="loc-stat-item" ref={served.ref}>
-              <div className="loc-stat-icon">🏘️</div>
+              <div className="loc-stat-icon"><IconNeighborhood size={28} /></div>
               <div className="loc-stat-number">{served.val}+</div>
               <div className="loc-stat-label">Communities Served</div>
             </div>
             <div className="loc-stat-item" ref={homes.ref}>
-              <div className="loc-stat-icon">🏠</div>
+              <div className="loc-stat-icon"><IconHome size={28} /></div>
               <div className="loc-stat-number">{homes.val.toLocaleString()}+</div>
               <div className="loc-stat-label">Homes Improved</div>
             </div>
             <div className="loc-stat-item" ref={years.ref}>
-              <div className="loc-stat-icon">⭐</div>
+              <div className="loc-stat-icon"><IconStar size={28} /></div>
               <div className="loc-stat-number">{years.val}+</div>
               <div className="loc-stat-label">Years of Excellence</div>
             </div>
             <div className="loc-stat-item" ref={stars.ref}>
-              <div className="loc-stat-icon">💎</div>
+              <div className="loc-stat-icon"><IconDiamond size={28} /></div>
               <div className="loc-stat-number">{stars.val}</div>
               <div className="loc-stat-label">Avg. Star Rating</div>
             </div>
@@ -216,7 +198,7 @@ export default function LocationsIndex() {
             at 470-666-4097 to schedule your free consultation.
           </p>
           <Link to="/contact" className="btn btn--primary">
-            Contact Us <ArrowIcon />
+            Contact Us <IconArrowRight size={16} />
           </Link>
         </div>
       </section>

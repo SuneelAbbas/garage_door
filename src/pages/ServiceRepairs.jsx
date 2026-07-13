@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicePages.css";
+import { IconLightning, IconWrench, IconClipboard, IconShield } from "../data/icons";
 
 const benefits = [
   {
-    icon: "⚡",
+    icon: <IconLightning size={24} />,
     title: "Same-Day Service Across Atlanta",
     text: "We understand emergencies do not wait. Most repairs are completed the same day you call, with no extra charge for rush scheduling.",
   },
   {
-    icon: "🔧",
+    icon: <IconWrench size={24} />,
     title: "Experienced, Certified Technicians",
     text: "Every repair is performed by skilled professionals who know every make and model inside and out.",
   },
   {
-    icon: "📋",
+    icon: <IconClipboard size={24} />,
     title: "Transparent, Upfront Pricing",
     text: "We diagnose the issue, explain your options, and give you the price before any work begins. No surprises, ever.",
   },
   {
-    icon: "🛡️",
+    icon: <IconShield size={24} />,
     title: "Licensed & Insured for Your Protection",
     text: "Your property and safety matter. We carry full liability insurance and workers' compensation coverage.",
   },
