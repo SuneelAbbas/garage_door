@@ -247,7 +247,7 @@ export default function LocationPage() {
               <div className="loc-about-image-frame">
                 <div className="loc-about-image-main">
                   <img
-                    src="/src/assets/images/garage_door_image.png"
+                    src={afterImg}
                     alt={`Garage door installation in ${loc.fullName}`}
                     onError={(e) => {
                       e.target.style.display = "none";

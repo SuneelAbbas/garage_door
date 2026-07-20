@@ -1727,7 +1727,7 @@ ul{list-style:none;}
   color: var(--orange);
 }
 .service-card--featured h3 { color: #fff; }
-.service-card--featured p { color: rgba(255,255,255,.65); }
+.service-card--featured p { color: #fff; }
 .service-card--featured .service-card-learn {
   color: var(--orange);
   border-color: rgba(255,255,255,.15);
